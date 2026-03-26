@@ -1,0 +1,28 @@
+{
+  metadata: {
+    version: "1",
+    device: "VCM Generic f0 65Hz",
+    date: "2025-08-29",
+    author: "Neil Burdock"
+  },
+  continuous: {
+    gain: 1.0,                 // Full use of the motor strength.
+    emphasis_ducking: 0.5,     // Duck continuous haptics by 50% during an emphasis event to pop out the latter.
+    frequency_min: 20.0,
+    frequency_max: 250.0       // Wide use of motor for good texture, but without too much audible noise.
+  },
+  emphasis: {
+    gain: 1.0,                 // Full use of the motor strength for emphasis events.
+    fade_out_percent: 0.0,
+    frequency_min: {
+      output_frequency: 55.0,   // Just below the resonant frequency of the motor - round, strong.
+      duration_ms: 27.0,        // 1.5 cycles at 55 Hz.
+      shape: 'sine'             // Rounder waveform.
+    },
+    frequency_max: {
+      output_frequency: 130.0,  // Very sharp, high frequency for 'clickiness'.
+      duration_ms: 20.0,        // As short as possible = assumed rise time of the motor.
+      shape: 'square'           // Sharper waveform.
+    }
+  }
+}

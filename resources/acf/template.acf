@@ -1,0 +1,54 @@
+{
+  metadata: {
+    version: "1.0.0",
+    device: "Name of device",
+    date: "YYYY-MM-DD",
+    author: "Name of author"
+  },
+  // The settings used for continuous signals.
+  continuous: {
+    // The gain of the continuous signal.
+    // Range: 0->1
+    gain: 0.8,
+    // The amount of ducking to apply to the continuous signal when emphasis is active
+    // This is an additional gain applied to the continuous signal, for example
+    // a value of '1' means 'no ducking', while '0' means 'drop to silence while
+    // an emphasis event is active'.
+    emphasis_ducking: 0.0,
+    // The minimum frequency in hertz of the continuous oscillator.
+    frequency_min: 55.0,
+    // The maximum frequency in hertz of the continuous oscillator.
+    frequency_max: 110.0,
+  },
+  // The settings used for emphasis events.
+  // Some settings are duplicated for 'frequency_min' and 'frequency_max'.
+  // A crossfade will be performed between these settings based on the event's frequency,
+  // e.g. an emphasis frequency of '0.5' will have its output frequency exactly
+  // half-way between the minimum and maximum values.
+  emphasis: {
+    // The gain of the emphasis signal
+    gain: 1.0,
+    // The amount that the emphasis signal should fade out while it's active.
+    // The emphasis event will start at maximum amplitude and then fade to a percentage of
+    // the starting amplitude over its duration.
+    // For example, a value of '100' means "fade to silence over the event's duration",
+    // while '0' means "don't fade out, stay at maximum amplitude".
+    fade_out_percent: 0.0,
+    // The settings to use when the emphasis frequency is at its minimum.
+    frequency_min: {
+      // The output frequency in hertz of the emphasis oscillator.
+      output_frequency: 55.0,
+      // The duration in milliseconds of the emphasis event.
+      duration_ms: 40,
+      // The shape of the emphasis oscillator's output.
+      // Can be any of ['saw', 'sine', 'square', 'triangle'].
+      shape: 'sine',
+    },
+    // The settings to use when the emphasis frequency is at its maximum.
+    frequency_max: {
+      output_frequency: 250.0,
+      duration_ms: 4,
+      shape: 'triangle',
+    }
+  }
+}
