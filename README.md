@@ -71,7 +71,7 @@ Natively integrated into professional audio middleware:
 - **[FMOD Haptics Instrument](https://www.fmod.com/docs/2.03/studio/instrument-reference.html#haptics-instrument)** -
   Native haptic authoring for PlayStation® (including DualSense™), Xbox, and
   Meta Quest
-- **[Wwise Motion](https://www.audiokinetic.com/en/public-library/2025.1.6_9117/?source=Help&id=haptic_clip_player_plug_in)** -
+- **[Wwise Haptic Clip Player](https://www.audiokinetic.com/en/public-library/2025.1.6_9117/?source=Help&id=haptic_clip_player_plug_in)** -
   Audiokinetic's native haptic authoring integration
 
 ### Game Engines
