@@ -1,0 +1,9 @@
+[submodule "third-party/openxr"]
+	path = third-party/openxr
+	url = https://github.com/KhronosGroup/OpenXR-SDK
+[submodule "third-party/googletest"]
+	path = third-party/googletest
+	url = https://github.com/google/googletest
+[submodule "third-party/jsoncpp"]
+	path = third-party/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp
