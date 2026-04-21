@@ -221,7 +221,6 @@ impl PartialEq for ParameterCurveControlPoint {
 
 fn get_intensity_from_amplitude_breakpoint(breakpoint: &AmplitudeBreakpoint) -> f32 {
     // sqrt() is used here because in Core Haptics, the intensity is quadratic, not linear.
-    // See "Intensity parameter is quadratic, not linear" in https://fburl.com/gdoc/uf6r0arr.
     if breakpoint.emphasis.is_some() {
         // When a breakpoint has an emphasis point, we reduce its amplitude. This is done to lower
         // the effect of phase cancellation: When Core Haptics plays a continuous and a transient
@@ -229,8 +228,6 @@ fn get_intensity_from_amplitude_breakpoint(breakpoint: &AmplitudeBreakpoint) -> 
         // signals together. This phase cancellation lowers the overall intensity of the transient.
         // By lowering the continuous amplitude here, the phase cancellation effect is reduced,
         // leading to a higher intensity of the transient.
-        // See "Signal rendering for multiple continuous and transients will be mixed and may create
-        // phase cancellation" in https://fburl.com/gdoc/uf6r0arr.
         breakpoint.amplitude.sqrt() * (1.0 - AMPLITUDE_DUCKING)
     } else {
         breakpoint.amplitude.sqrt()

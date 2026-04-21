@@ -140,7 +140,8 @@ pub fn render_waveform(
         // might take some time to turn it on again.
         let sample_i32 = max(sample_i32, 1);
         // Prevent values higher than 255, which will make Android reject the waveform. This can
-        // happen due to renderer bug T169571496.
+        // happen due to renderer bug where on a clip with an amplitude envelope at 1.0, a emphasis
+        // event at the wrong place can cause the engine to produce PCM sample outside of the range [-1, 1].
         let sample_i32 = min(sample_i32, 255);
         let sample_duration_ms = min(
             (sample_duration * 1000.0) as i64,

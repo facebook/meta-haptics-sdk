@@ -186,9 +186,6 @@ mod tests {
             0.0, 0.1111, 0.2222, 0.3333, 0.4444, 0.5555, 0.6666, 0.7777, 0.8888, 1.0,
         ];
         approx_compare_slices(&amplitudes_basic_clip, &expected_amplitudes);
-
-        // T239990735: This fails and is therefore commented out
-        // approx_compare_slices(&amplitudes_redundant_clip, &expected_amplitudes);
     }
 
     // Tests that emphasis is rendered at all
@@ -205,14 +202,5 @@ mod tests {
         };
 
         let _amplitudes = render_clip(clip.into(), 0.02);
-
-        // Check that the samples are not all equal - the emphasis should stand out
-        // Due to T240004925, this is broken, and therefore commented out.
-        // Rendering is furthermore affected by T240006049 and T169571496.
-        // let first = amplitudes.first().unwrap();
-        // assert!(!amplitudes.iter().all(|sample| sample == first));
-
-        // let expected_amplitudes = vec![???];
-        // approx_compare_slices(&amplitudes, &expected_amplitudes);
     }
 }
