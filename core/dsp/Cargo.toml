@@ -1,0 +1,15 @@
+[package]
+name = "haptic_dsp"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = ["spectral"]
+spectral = ["itertools", "realfft"]
+
+[dependencies]
+realfft = { workspace = true, optional = true }
+itertools = { workspace = true, optional = true }
+
+[dev-dependencies]
+assert_approx_eq = { workspace = true }

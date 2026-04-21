@@ -1,0 +1,27 @@
+{
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "metadata": {
+    "editor": "VSCode",
+    "author": "SDK Team",
+    "source": "",
+    "project": "",
+    "tags": [
+      "Test"
+    ],
+    "description": "Testing"
+  },
+  "signals": {
+    "continuous": {
+      "envelopes": {
+        "amplitude": [
+        ],
+        "frequency": [
+        ]
+      }
+    }
+  }
+}

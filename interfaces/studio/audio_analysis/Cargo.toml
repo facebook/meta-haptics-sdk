@@ -1,0 +1,19 @@
+[package]
+name = "haptic_audio_analysis"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+multithreaded_analysis = []
+
+[dependencies]
+haptic_dsp = { path = "../../../core/dsp" }
+haptic_data = { path = "../../../core/haptic_data" }
+
+serde = { workspace = true }
+symphonia = { workspace = true }
+typeshare = { workspace = true }
+
+[dev-dependencies]
+assert_approx_eq = { workspace = true }
+test-case = { workspace = true }

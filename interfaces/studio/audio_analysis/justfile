@@ -1,0 +1,11 @@
+default: test
+
+clean:
+  cargo clean
+
+build:
+  cargo build -p haptic_audio_analysis
+
+test:
+  just build
+  cargo test -p haptic_audio_analysis

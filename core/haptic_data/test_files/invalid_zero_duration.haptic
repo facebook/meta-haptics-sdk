@@ -1,0 +1,51 @@
+{
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "metadata": {
+    "editor": "VSCode",
+    "author": "SDK Team",
+    "source": "",
+    "project": "",
+    "tags": [
+      "Test"
+    ],
+    "description": "Testing"
+  },
+  "signals": {
+    "continuous": {
+      "envelopes": {
+        "amplitude": [
+          {
+            "time": 0.0,
+            "amplitude": 0.2
+          },
+          {
+            "time": 0.0,
+            "amplitude": 0.3
+          },
+          {
+            "time": 0.0,
+            "amplitude": 0.2,
+            "emphasis": {
+              "amplitude": 0.6,
+              "frequency": 0.7
+            }
+          },
+          {
+            "time": 0.0,
+            "amplitude": 0.5
+          }
+        ],
+        "frequency": [
+          {
+            "time": 0.0,
+            "frequency": 0.99
+          }
+        ]
+      }
+    }
+  }
+}

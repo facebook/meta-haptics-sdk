@@ -1,0 +1,11 @@
+default: test
+
+clean:
+  cargo clean
+
+build:
+  cargo build -p haptics_sdk_napi
+
+test:
+  just build
+  cargo test -p haptics_sdk_napi

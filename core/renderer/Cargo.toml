@@ -1,0 +1,28 @@
+[package]
+name = "haptic_renderer"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = ["wav", "cargo_bindgen"]
+wav = ["hound"]
+android = []
+cargo_bindgen = []
+
+[build-dependencies]
+cc = { workspace = true }
+bindgen = { workspace = true }
+
+[dependencies]
+haptic_dsp = { path = "../dsp", default-features = false }
+haptic_data = { path = "../haptic_data" }
+
+dasp_sample = { workspace = true }
+hound = { workspace = true, optional = true }
+itertools = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+typeshare = { workspace = true }
+
+[dev-dependencies]
+assert_approx_eq = { workspace = true }
