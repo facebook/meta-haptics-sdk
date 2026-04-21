@@ -1,0 +1,32 @@
+[workspace]
+members = [
+  "core/dsp",
+  "core/haptic_data",
+  "core/renderer",
+  "interfaces/studio/audio_analysis",
+  "interfaces/studio/napi",
+]
+resolver = "2"
+
+[profile.release]
+strip = true
+
+[workspace.dependencies]
+assert_approx_eq = "1.1.0"
+bindgen = "0.72"
+cc = "1.0"
+dasp_sample = "0.11.0"
+hound = "3.5.0"
+itertools = "0.10.5"
+napi = { version = "2", features = ["napi8", "serde-json"] }
+napi-derive = "2"
+napi-build = "2"
+realfft = "3.3.0"
+serde = { version = "1.0.145", features = ["derive"] }
+serde_json = "1.0.85"
+symphonia = { version = "0.5.4", features = [
+  "aiff", "flac", "mp3", "ogg", "pcm", "vorbis", "wav",
+] }
+test-case = "3.0.0"
+thiserror = "1.0.38"
+typeshare = "1.0.4"

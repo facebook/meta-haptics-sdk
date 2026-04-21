@@ -1,0 +1,21 @@
+[package]
+name = "haptics_sdk_napi"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+haptic_audio_analysis = { path = "../../studio/audio_analysis" }
+haptic_data = { path = "../../../core/haptic_data", features = ["ahap"] }
+haptic_renderer = { path = "../../../core/renderer", features = ["wav", "android"] }
+
+napi = { workspace = true }
+napi-derive = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+typeshare = { workspace = true }
+
+[build-dependencies]
+napi-build = { workspace = true }
