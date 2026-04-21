@@ -1,0 +1,10 @@
+default: test
+
+clean:
+  just napi/clean
+
+build:
+  just napi/build
+
+test:
+  just napi/test

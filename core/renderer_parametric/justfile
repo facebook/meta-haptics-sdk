@@ -1,0 +1,13 @@
+default: test
+
+clean:
+  rm -rf build
+
+build:
+  mkdir -p build
+  cd build && cmake ..
+  cd build && cmake --build .
+
+test:
+  just build
+  build/tests/parametric_haptic_renderer_test

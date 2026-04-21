@@ -1,0 +1,30 @@
+{
+  metadata: {
+    version: "1.0.0",
+    device: "Generic Console: Simple Haptics (amplitude only)",
+    date: "2024-11-11",
+    author: "Max"
+  },
+  continuous: {
+    gain: 0.8,                // Reduces the amplitude of the continuous vibration to 80% to leave some head room for emphasis.
+    emphasis_ducking: 0.8,    // Reduces the amplitude of the continuous vibration by 20% when an emphasis is played.
+    frequency_min: 60,        // Usually the frequency range the continuous vibration plays back at, but set to the same value here
+    frequency_max: 60,        // as we expect this ACF to be used a simple haptics backend, which only plays back amplitude values.
+  },
+  emphasis: {
+    gain: 1.0,                // Emphasis are played back at 100% amplitude.
+    fade_out_percent: 0,
+    // This ACF targets a generic console that only plays back amplitude values.
+    // The frequency values below are arbitrary and have no effect on the rendering.
+    frequency_min: {
+      output_frequency: 60,
+      duration_ms: 40,
+      shape: 'sine',
+    },
+    frequency_max: {
+      output_frequency: 60,
+      duration_ms: 20,
+      shape: 'square',
+    },
+  },
+}
